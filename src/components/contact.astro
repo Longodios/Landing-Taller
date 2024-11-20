@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import imageForm from '../../public/utils/basil_upload-solid.svg'
+import { Image } from 'astro:assets';
+---
+
+<Layout title="Contact">
+	<main class="max-w-[390px] mx-auto p-10">
+		<h1 class="text-left text-white font-bold text-5xl">Contacto</h1>
+        <form action="https://api.emailjs.com/api/v1.0/email/send-form" method="POST" enctype="multipart/form-data" class="mt-10 flex flex-col gap-2">
+            <label class="text-white text-2xl font-semibold" for="name"> *Nombre:</label>
+            <input class="p-3 rounded-xl" placeholder="Nombre" type="text" name="name" id="name">
+            <label class="text-white text-2xl font-semibold" for="email"> *Email:</label>
+            <input class="p-3 rounded-xl" placeholder="Email" type="text" name="email" id="email">
+            <label class="text-white text-2xl font-semibold" for="tel"> Telefono de contacto:</label>
+            <input class="p-3 rounded-xl" placeholder="xxx-xxx-xxx" type="text" name="tel" id="tel">
+            <label class=" text-white text-2xl"   for="text-box">*Mensaje</label> 
+            <textarea class="p-3 min-h-[123px] rounded-2xl" ></textarea>
+            <label class="text-white text-2xl font-semibold" for="documents"> Adjuntanos tu plano:</label>
+            <div class="bg-gray-100 p-4 rounded-lg flex flex-col justify-center items-center">
+                <Image class="" src={imageForm} alt="iconUpload" width="26" height="26" />
+                <div class="flex flex-col">
+                    <input
+                    type="file"
+                    class="text-gray-700 p-4 rounded-xl "
+                    name="documents"
+                    id="documents"
+                    accept=".pdf, .png, .jpg"
+                  />
+
+                 
+                </div>
+             
+            </div>
+            
+
+            <button type="submit" class="bg-tallerAmarillo rounded-2xl p-3 font-semibold uppercase mt-10">Contactanos</button>
+            
+        </form>
+	</main>		
+
+</Layout>    
+
+<script is:inline>
+
+    const fileInput = document.getElementById("documents");
+    const fileInfo = document.createElement("p");
+    fileInfo.className = "text-sm text-gray-700 mt-2";
+    fileInput?.parentNode?.appendChild(fileInfo);
+
+    fileInput?.addEventListener("change", () => {
+        const file = fileInput.files[0];
+        if(file){
+            fileInfo.textContent = `Archivo seleccionado: ${file.name}`;
+            console.log(file.name)
+        } else {
+            fileInfo.textContent = "";
+        }
+    });
+
+
+
+</script>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" is:inline>
+</script>
+<script type="text/javascript" is:inline>
+   (function(){
+      emailjs.init({
+        publicKey: "k5mrYLrO1KlvyCqK5",
+      });
+   })();
+</script>
