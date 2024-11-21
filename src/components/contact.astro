@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import imageForm from '../../public/utils/basil_upload-solid.svg'
+import iconDirection from '../../public/utils/Group.svg';
 import { Image } from 'astro:assets';
 ---
 
 <Layout title="Contact">
-	<main class="max-w-[390px] mx-auto p-10">
+	<main class=" mx-auto p-10">
 		<h1 class="text-left text-white font-bold text-5xl">Contacto</h1>
-        <form action="https://api.emailjs.com/api/v1.0/email/send-form" method="POST" enctype="multipart/form-data" class="mt-10 flex flex-col gap-2">
+        <form  id="contact-form"  enctype="multipart/form-data" class="mt-10 flex flex-col gap-2">
             <label class="text-white text-2xl font-semibold" for="name"> *Nombre:</label>
             <input class="p-3 rounded-xl" placeholder="Nombre" type="text" name="name" id="name">
             <label class="text-white text-2xl font-semibold" for="email"> *Email:</label>
@@ -15,20 +16,21 @@ import { Image } from 'astro:assets';
             <label class="text-white text-2xl font-semibold" for="tel"> Telefono de contacto:</label>
             <input class="p-3 rounded-xl" placeholder="xxx-xxx-xxx" type="text" name="tel" id="tel">
             <label class=" text-white text-2xl"   for="text-box">*Mensaje</label> 
-            <textarea class="p-3 min-h-[123px] rounded-2xl" ></textarea>
+            <textarea name="text-box" class="p-3 min-h-[123px] rounded-2xl" ></textarea>
             <label class="text-white text-2xl font-semibold" for="documents"> Adjuntanos tu plano:</label>
             <div class="bg-gray-100 p-4 rounded-lg flex flex-col justify-center items-center">
                 <Image class="" src={imageForm} alt="iconUpload" width="26" height="26" />
                 <div class="flex flex-col">
+                    <label for="documents" class="cursor-pointer p-2 rounded-xl border-2 mt-2 bg-tallerAmarillo">Seleccionar archivo</label>
                     <input
                     type="file"
-                    class="text-gray-700 p-4 rounded-xl "
+                    class="hidden"
                     name="documents"
                     id="documents"
-                    accept=".pdf, .png, .jpg"
+                    accept=".pdf, .png, .jpg , .py"
                   />
 
-                 
+                <p id="file-name" class="text-gray-700 mt-2"></p> 
                 </div>
              
             </div>
@@ -37,25 +39,81 @@ import { Image } from 'astro:assets';
             <button type="submit" class="bg-tallerAmarillo rounded-2xl p-3 font-semibold uppercase mt-10">Contactanos</button>
             
         </form>
+        <div class="flex mt-10">
+            <Image src={iconDirection} alt="Icon Direction" height="26" width="26"></Image>
+            <h2 class="text-white text-2xl font-semibold ml-[10px] uppercase">Dirección</h2>
+        </div>
+        <div id="map" class="w-full h-80 mt-4"></div>
+        <div class="flex flex-col mt-2">
+            <p class="text-white text-xl mt-3">
+                Polígono Industrial de Bamio, Parc 61 - <br> 
+                36618 - Vilagarcía de Arousa (Pontevedra)
+            </p>
+        </div>
+        
 	</main>		
 
-</Layout>    
+</Layout>
+
+
+
 
 <script is:inline>
 
+
+
+     function initMap() {
+        const location = {lat: 42.63846969604492, lng: -8.74567699432373};
+        
+       const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 17,
+            center: location,
+            
+        });
+
+        const marker = new google.maps.Marker({
+            position: location,
+            map: map
+            
+        });
+    }
+</script>
+
+<script  is:inline src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZoMGi_ZeBgWXJnpspD7wn_4Hf_PlhrFE&callback=initMap&libraries=maps,marker">
+</script>
+
+<script is:inline>
+
+    const form = document.getElementById("contact-form");
     const fileInput = document.getElementById("documents");
-    const fileInfo = document.createElement("p");
-    fileInfo.className = "text-sm text-gray-700 mt-2";
-    fileInput?.parentNode?.appendChild(fileInfo);
+    const fileName = document.getElementById("file-name");
 
     fileInput?.addEventListener("change", () => {
         const file = fileInput.files[0];
         if(file){
-            fileInfo.textContent = `Archivo seleccionado: ${file.name}`;
+            fileName.textContent = `Archivo seleccionado: ${file.name}`;
             console.log(file.name)
         } else {
-            fileInfo.textContent = "";
+            fileName.textContent = "Ningún archivo seleccionado";
         }
+    });
+
+    //Envío formulario a EmailJS
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault(); //Evita enviar el formulario por defecto
+
+        emailjs.sendForm("service_vpyydng", "template_qmwgyrp" , form , "k5mrYLrO1KlvyCqK5" )
+
+        .then(() => {
+            alert("Formulario enviado con éxito");
+            form.reset();
+            fileName.textContent = ""; 
+        })
+        .catch((error) => {
+            console.log("Error al enviar el formulario", error);
+            alert("Hubo un error al enviar el formulario");
+        });
     });
 
 
