@@ -1,0 +1,77 @@
+---
+
+---
+
+<section class="flex flex-col items-center gap-6 p-6 text-white">
+  <div class="grid gap-4 p-9 rounded-3xl">
+    <h2 class="text-6xl font-bold">Nuestros servicios.</h2>
+    <p>
+      Nuestro equipo de expertos cuenta con más de 25 años de experiencia en el
+      sector, lo que nos permite ofrecer un servicio de calidad a nuestros
+      clientes. Nos enorgullecemos de nuestra atención al detalle y nuestro
+      compromiso con la innovación continua.
+    </p>
+  </div>
+  <ul class="grid gap-4 p-9">
+    <li class="flex flex-col items-center">
+      <span id="trabajadores" class="text-4xl font-bold">0</span>
+      <p>TRABAJADORES</p>
+    </li>
+    <li class="flex flex-col items-center">
+      <span id="clientes" class="text-4xl font-bold">0</span>
+      <p>CLIENTES</p>
+    </li>
+    <li class="flex flex-col items-center">
+      <span id="proyectos" class="text-4xl font-bold">0</span>
+      <p>PROYECTOS</p>
+    </li>
+  </ul>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const valores = [
+      { id: "trabajadores", valor: 5 },
+      { id: "clientes", valor: 200 },
+      { id: "proyectos", valor: 10 },
+    ];
+
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const valorEncontrado = valores.find((v) => v.id === entry.target.id);
+
+          if (valorEncontrado) {
+            const { id, valor } = valorEncontrado;
+
+            let contador = 0;
+            const incremento = Math.ceil(valor / 100);
+            const intervalo = setInterval(() => {
+              contador += incremento;
+              if (contador >= valor) {
+                contador = valor;
+                clearInterval(intervalo);
+              }
+              entry.target.textContent = contador.toString();
+            }, 20);
+
+            observer.unobserve(entry.target);
+          }
+        }
+      });
+    }, options);
+
+    valores.forEach(({ id }) => {
+      const elemento = document.getElementById(id);
+      if (elemento) {
+        observer.observe(elemento);
+      }
+    });
+  });
+</script>

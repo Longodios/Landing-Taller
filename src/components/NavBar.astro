@@ -1,0 +1,20 @@
+---
+import Image from "astro/components/Image.astro";
+import LogoTJL from "../assets/logos/LogoTJL.webp";
+---
+
+<nav class="px-6 py-5 grid gap-3 text-white bg-gray-800">
+  <div class="flex items-center gap-3">
+    <Image
+      src={LogoTJL}
+      alt="Talleres J. Longo Logo"
+      width="70"
+      height="70"
+      class="flex-shrink-0"
+    />
+    <h1 class="text-lg font-medium">
+      TALLERES <strong class="font-semibold">J.LONGO, S.L.</strong>
+    </h1>
+  </div>
+  <p class="text-sm">Contacto: 986 50 55 11 // 639 75 53 33</p>
+</nav>

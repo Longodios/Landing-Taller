@@ -1,0 +1,28 @@
+---
+import Image from "astro/components/Image.astro";
+import BotonContacto from "./BotonContacto.astro";
+import Lijando from "../assets/Images/Lijando.webp";
+---
+
+<section
+  class="flex flex-col items-center gap-6 p-6 bg-tallerGrisOscuro text-white"
+>
+  <div class="grid gap-4 p-9 bg-tallerAzulMarino rounded-3xl">
+    <h2 class="text-3xl font-bold">Perfección a medida Talleres J. Longo</h2>
+    <div class="grid gap-4">
+      <p>Más de 25 años de experiencia en carpintería metálica de precisión.</p>
+      <p>
+        Nos hemos especializado en mecanizado de precisión, fabricando piezas
+        únicas y series cortas con la máxima calidad.
+      </p>
+    </div>
+    <BotonContacto />
+  </div>
+
+  <Image
+    class="w-full h-[500px] rounded-tr-[140px] shadow-lg object-cover"
+    height={500}
+    src={Lijando}
+    alt="Lijando"
+  />
+</section>
