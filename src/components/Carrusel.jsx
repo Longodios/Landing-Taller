@@ -12,7 +12,7 @@ const Carrusel = () => {
             <div className=" w-42 border-3 border-white rounded-full  h-42 absolute">
                    <img src="/src/utils/imagenTestimonio.webp" alt="imagenTestimonio1" className="w-full object-cover rounded-full" />
             </div>
-            <article className="w-80 h-[530px] border-1 border-white rounded-xl bg-tallerAzulMarino ">
+            <article className="w-80 h-[530px] border-1 border-white rounded-lg bg-tallerAzulMarino ">
                 
 
             </article>
