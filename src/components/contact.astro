@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import imageForm from '../../public/utils/basil_upload-solid.svg'
 import iconDirection from '../../public/utils/Group.svg';
+import iconEmail from '../../public/utils/iconEmail.svg';
+import iconTel from '../../public/utils/iconTelefono.svg';
 import { Image } from 'astro:assets';
 ---
 
@@ -39,17 +41,35 @@ import { Image } from 'astro:assets';
             <button type="submit" class="bg-tallerAmarillo rounded-2xl p-3 font-semibold uppercase mt-10">Contactanos</button>
             
         </form>
+        <section class="flex flex-col gap-2">
+
         <div class="flex mt-10">
             <Image src={iconDirection} alt="Icon Direction" height="26" width="26"></Image>
-            <h2 class="text-white text-2xl font-semibold ml-[10px] uppercase">Dirección</h2>
+            <h2 class="text-white text-2xl  ml-[10px] uppercase">Dirección</h2>
         </div>
-        <div id="map" class="w-full h-80 mt-4"></div>
+        <div id="map" class="w-full h-80 mt-4 rounded-xl"></div>
         <div class="flex flex-col mt-2">
-            <p class="text-white text-xl mt-3">
+            <p class="text-white text-md mt-3">
                 Polígono Industrial de Bamio, Parc 61 - <br> 
                 36618 - Vilagarcía de Arousa (Pontevedra)
             </p>
         </div>
+        <div class="flex  mt-10">
+            <Image src={iconEmail} alt="Icon Email" height="26" width="26"></Image>
+            <h2 class="text-white text-2xl  ml-[10px] uppercase">Email</h2>
+            
+        </div>
+            <h2 class="text-white text-xl mt-5  "><a class="underline">pedidos@talleresjlongo.es</a></h2>
+
+        <div class="flex mt-10">
+            <Image src={iconTel} alt="Icon Email" height="26" width="26"></Image>
+            <h2 class="text-white text-xl ml-[10px] uppercase">Teléfono</h2>
+        </div>
+            <h2 class="text-white text-xl mt-5  ">+34 986 50 55 11</h2>
+            <h2 class="text-white text-xl mt-5  ">+34 633 43 96 86 </h2>
+        </section>
+
+
         
 	</main>		
 
