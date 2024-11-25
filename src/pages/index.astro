@@ -1,4 +1,5 @@
 ---
+
 import Layout from "../layouts/Layout.astro";
 import Contact from "../components/contact.astro";
 import NavBar from "../components/NavBar.astro";
@@ -7,6 +8,8 @@ import Servicios from "../components/Servicios.astro";
 import ServiciosList from "../components/ServiciosList.astro";
 import Tecnologias from "../components/Tecnologias.astro";
 import Pasos from "../components/Pasos.astro";
+import Footer from '../components/Footer.astro';
+import Carrusel from '../components/Carrusel';
 ---
 
 <Layout title="Talleres J. Longo, S.L">
@@ -16,5 +19,16 @@ import Pasos from "../components/Pasos.astro";
   <ServiciosList />
   <Tecnologias />
   <Pasos />
-  <Contact />
+  <Carrusel client:load/>
+  <Contact/>
+  <Footer/>	
+
+
+
+
+
+
+	
+
+
 </Layout>
