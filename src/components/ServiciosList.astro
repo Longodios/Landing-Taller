@@ -1,0 +1,29 @@
+---
+import Image from "astro/components/Image.astro";
+import planosTaladro from "../assets/Images/planosTaladro.webp";
+import soldador from "../assets/Images/soldador.webp";
+import BotonContacto from "./BotonContacto.astro";
+---
+
+<section
+  class="grid lg:flex place-items-center text-white bg-tallerGrisOscuro place-content-center lg:py-16 lg:gap-8"
+>
+  <div class="flex max-w-[1920px] items-center lg:gap-4">
+    <Image
+      class="w-1/2 h-[281px] object-cover"
+      src={planosTaladro}
+      alt="planosTaladro"
+    />
+    <Image class="w-1/2 h-[281px] object-cover" src={soldador} alt="soldador" />
+  </div>
+  <article class="flex flex-col gap-6 p-6 max-w-[650px]">
+    <h2 class="text-3xl">Nuestros servicios incluyen:</h2>
+    <p>
+      Mecánica de precisión, rectificados cilíndricos y planos, trabajos de
+      torno, fresa y cepillo, moldes y matrices, calderería ligera. Somos
+      profesionales altamente cualificados y con amplia experiencia en el sector
+      de los mecanizados y la calderería.
+    </p>
+    <BotonContacto />
+  </article>
+</section>

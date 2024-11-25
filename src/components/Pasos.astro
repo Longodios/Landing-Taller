@@ -1,0 +1,70 @@
+---
+import Image from "astro/components/Image.astro";
+import Obra from "../assets/Images/obra.webp";
+---
+
+<section
+  class="grid place-items-center gap-6 p-6 text-white bg-black"
+  aria-labelledby="section-title"
+>
+  <div class="grid gap-4 rounded-2xl">
+    <h2 id="section-title" class="text-3xl font-bold">
+      Pasos para materializar tus ideas
+    </h2>
+    <article class="max-w-[650px]">
+      <ul class="grid gap-6 md:grid-cols-2">
+        {
+          [
+            {
+              num: "01",
+              title: "Diseño y Desarrollo",
+              text: "Transformamos tus ideas en soluciones a medida a través de un proceso sencillo y eficiente.",
+            },
+            {
+              num: "02",
+              title: "Fabricación precisa",
+              text: "Nuestro equipo de expertos en metalistería utiliza las últimas tecnologías para fabricar tus piezas con la máxima precisión.",
+            },
+            {
+              num: "03",
+              title: "Control de calidad",
+              text: "Supervisamos minuciosamente cada etapa del proceso de fabricación, asegurando que tu proyecto cumpla con los más altos estándares de calidad.",
+            },
+            {
+              num: "04",
+              title: "Entrega y satisfacción",
+              text: "Hacemos la entrega de tu proyecto a tiempo y nos aseguramos de que cumpla con tus expectativas, garantizando tu completa satisfacción.",
+            },
+          ].map(({ num, title, text }) => (
+            <li>
+              <article>
+                <header>
+                  <span class="text-8xl font-bold" itemprop="position">
+                    {num}
+                  </span>
+                  <h3 class="font-bold text-2xl mt-2" itemprop="name">
+                    {title}
+                  </h3>
+                </header>
+                <p class="mt-2" itemprop="text">
+                  {text}
+                </p>
+              </article>
+            </li>
+          ))
+        }
+      </ul>
+    </article>
+  </div>
+  <figure class="h-[580px] object-cover">
+    <Image
+      src={Obra}
+      height={580}
+      alt="Imagen de una obra en proceso, destacando precisión y detalle."
+      itemprop="image"
+    />
+    <figcaption class="sr-only">
+      Proceso de fabricación y calidad en obra.
+    </figcaption>
+  </figure>
+</section>
