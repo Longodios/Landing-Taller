@@ -3,9 +3,14 @@ import Image from "astro/components/Image.astro";
 import Obra from "../assets/Images/obra.webp";
 ---
 
-<section class="grid place-items-center gap-6 p-6 text-white bg-black">
+<section
+  class="grid place-items-center gap-6 p-6 text-white bg-black"
+  aria-labelledby="section-title"
+>
   <div class="grid gap-4 rounded-2xl">
-    <h2 class="text-3xl font-bold">Pasos para materializar tus ideas</h2>
+    <h2 id="section-title" class="text-3xl font-bold">
+      Pasos para materializar tus ideas
+    </h2>
     <article class="max-w-[650px]">
       <ul class="grid gap-6 md:grid-cols-2">
         {
@@ -32,16 +37,34 @@ import Obra from "../assets/Images/obra.webp";
             },
           ].map(({ num, title, text }) => (
             <li>
-              <div class="grid gap-3">
-                <span class="text-8xl">{num}</span>
-                <p class="font-bold text-2xl">{title}</p>
-              </div>
-              <p class="mt-2">{text}</p>
+              <article>
+                <header>
+                  <span class="text-8xl font-bold" itemprop="position">
+                    {num}
+                  </span>
+                  <h3 class="font-bold text-2xl mt-2" itemprop="name">
+                    {title}
+                  </h3>
+                </header>
+                <p class="mt-2" itemprop="text">
+                  {text}
+                </p>
+              </article>
             </li>
           ))
         }
       </ul>
     </article>
   </div>
-  <Image src={Obra} height={580} alt="Obra" class="h-[580px] object-cover" />
+  <figure class="h-[580px] object-cover">
+    <Image
+      src={Obra}
+      height={580}
+      alt="Imagen de una obra en proceso, destacando precisión y detalle."
+      itemprop="image"
+    />
+    <figcaption class="sr-only">
+      Proceso de fabricación y calidad en obra.
+    </figcaption>
+  </figure>
 </section>
