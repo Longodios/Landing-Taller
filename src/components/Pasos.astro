@@ -11,7 +11,10 @@ import Obra from "../assets/Images/obra.webp";
     <h2 id="section-title" class="text-3xl font-bold">
       Pasos para materializar tus ideas
     </h2>
-    <article class="max-w-[650px]">
+    <article class="max-w-[650px]" aria-labelledby="steps-title">
+      <h3 id="steps-title" class="sr-only">
+        Lista de pasos para la creación de proyectos
+      </h3>
       <ul class="grid gap-6 md:grid-cols-2">
         {
           [
@@ -39,14 +42,14 @@ import Obra from "../assets/Images/obra.webp";
             <li>
               <article>
                 <header>
-                  <span class="text-8xl font-bold" itemprop="position">
+                  <span class="text-8xl font-bold block" itemprop="position">
                     {num}
                   </span>
-                  <h3 class="font-bold text-2xl mt-2" itemprop="name">
+                  <h4 class="font-bold text-2xl mt-2" itemprop="name">
                     {title}
-                  </h3>
+                  </h4>
                 </header>
-                <p class="mt-2" itemprop="text">
+                <p class="mt-2" itemprop="description">
                   {text}
                 </p>
               </article>
@@ -56,7 +59,8 @@ import Obra from "../assets/Images/obra.webp";
       </ul>
     </article>
   </div>
-  <figure class="h-[580px] object-cover">
+
+  <figure class="max-h-[580px] object-cover">
     <Image
       src={Obra}
       height={580}
