@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const Carrusel = () => {
+
   // Estado para rastrear el botón seleccionado
   const [selectedIndex, setSelectedIndex] = useState(null);
 
@@ -52,5 +53,6 @@ const Carrusel = () => {
     </>
   );
 };
+          
 
 export default Carrusel;
