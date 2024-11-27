@@ -8,9 +8,9 @@ import { Image } from 'astro:assets';
 ---
 
 <Layout title="Contact">
-	<main class=" mx-auto p-10">
-		<h1 class="text-left text-white font-bold text-5xl">Contacto</h1>
-        <form  id="contact-form"  enctype="multipart/form-data" class="mt-10 flex flex-col gap-2">
+	<main class=" flex mx-auto p-10 w-full max-sm:flex-col ">
+        <form  id="contact-form"  enctype="multipart/form-data" class="mt-10 max-sm:flex max-sm:flex-col gap-2">
+            <h1 class="max-sm:text-left text-white font-bold text-5xl text-center ">Contacto</h1>
             <label class="text-white text-2xl font-semibold" for="name"> *Nombre:</label>
             <input class="p-3 rounded-xl" placeholder="Nombre" type="text" name="name" id="name">
             <label class="text-white text-2xl font-semibold" for="email"> *Email:</label>
