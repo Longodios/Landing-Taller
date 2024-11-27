@@ -6,21 +6,25 @@ import Trabajador from "../assets/Images/trabajador.webp";
 
 <section
   class="grid lg:flex place-items-center place-content-center gap-6 p-6 text-white bg-tallerGrisOscuro"
+  aria-labelledby="technology-heading"
 >
-  <div class="grid gap-4 rounded-2xl">
-    <h2 class="text-3xl font-bold">Equipados con las últimas tecnologías</h2>
-    <article class="max-w-[650px]">
+  <div class="grid gap-4 rounded-2xl max-w-[650px]">
+    <h2 id="technology-heading" class="text-3xl font-bold">
+      Equipados con las últimas tecnologías
+    </h2>
+    <p>
       Nuestro equipo de expertos cuenta con más de 25 años de experiencia en el
       sector, lo que nos permite ofrecer un servicio de calidad a nuestros
       clientes. Nos enorgullecemos de nuestra atención al detalle y nuestro
       compromiso con la innovación continua.
-    </article>
+    </p>
     <BotonContacto />
   </div>
   <Image
     src={Trabajador}
     height={600}
-    alt="Trabajador"
-    class={"max-h-[600px] w-[626px] h-full object-cover"}
+    alt="Trabajador especializado utilizando equipo de última tecnología"
+    class="max-h-[600px] h-full object-cover"
+    loading="lazy"
   />
 </section>
