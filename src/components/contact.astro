@@ -5,10 +5,12 @@ import iconDirection from '../../public/utils/Group.svg';
 import iconEmail from '../../public/utils/iconEmail.svg';
 import iconTel from '../../public/utils/iconTelefono.svg';
 import { Image } from 'astro:assets';
+import Carrusel from "../components/Carrusel.jsx"
 ---
 
 <Layout title="Contact">
-	<main class=" flex mx-auto p-10 w-full max-sm:flex-col ">
+    <Carrusel client:load/>
+    <main class=" flex mx-auto p-10 w-full max-sm:flex-col ">
         <form  id="contact-form"  enctype="multipart/form-data" class="mt-10 max-sm:flex max-sm:flex-col gap-2">
             <h1 class="max-sm:text-left text-white font-bold text-5xl text-center ">Contacto</h1>
             <label class="text-white text-2xl font-semibold" for="name"> *Nombre:</label>
@@ -68,8 +70,7 @@ import { Image } from 'astro:assets';
             <h2 class="text-white text-xl mt-5  ">+34 986 50 55 11</h2>
             <h2 class="text-white text-xl mt-5  ">+34 633 43 96 86 </h2>
         </section>
-
-
+    
         
 	</main>		
 
