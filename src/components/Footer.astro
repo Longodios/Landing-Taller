@@ -1,19 +1,23 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import logoTaller from '../../public/utils/logoTaller.svg';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import logoTaller from "../../public/utils/logoTaller.svg";
 ---
 
-
 <Layout title="Footer">
-    <footer class="bg-black w-full flex flex-col p-3">
-        <div class="flex flex-col gap-2 p-3">
-            <Image src={logoTaller} alt="logoTaller" height="250" width="250"></Image>
-            <p class="text-tallerAmarillo text-lg text-start">Talleres J Longo - Expertos en mecánica de precisión, mecanizados, rectificados y calderería ligera en Vilagarcía de Arousa. Más de 25 años ofreciendo soluciones de calidad con la máxima precisión</p>
-            <p class="text-white text-lg text-start">Política de cookies</p>
-            <p class="text-white text-lg text-start">Política de privacidad</p>
-        </div>
-    </footer>
-
-
+  <footer class="bg-black w-full flex flex-col p-3">
+    <div class="flex flex-col gap-2 p-3">
+      <Image src={logoTaller} alt="logoTaller" height="250" width="250" />
+      <p class="text-tallerAmarillo text-lg text-start">
+        Talleres J Longo - Expertos en mecánica de precisión, mecanizados,
+        rectificados y calderería ligera en Vilagarcía de Arousa. Más de 25 años
+        ofreciendo soluciones de calidad con la máxima precisión
+      </p>
+      <a
+        href="/terminosycondiciones"
+        class="text-blue-400 text-lg text-start hover:text-blue-800 underline"
+        >Política de cookies y privacidad</a
+      >
+    </div>
+  </footer>
 </Layout>
