@@ -6,6 +6,7 @@ const Carrusel = () => {
   // Estado para rastrear el botón seleccionado
   const [selectedIndex, setSelectedIndex] = useState(null);
 
+  
   const toggleCard = (index) => {
     // Alterna el color del botón seleccionado
     setSelectedIndex(selectedIndex === index ? null : index);
