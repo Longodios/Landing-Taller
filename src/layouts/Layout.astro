@@ -1,42 +1,68 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-
+    <meta
+      name="description"
+      content="En Talleres J. Longo somos expertos en mecánica de precisión, rectificados cilíndricos y planos, trabajos de torno, fresa y cepillo, moldes y matrices, y calderería ligera. Confía en nuestra experiencia y profesionalidad en mecanizados y calderería."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>Landing Talleres Longo</title>
+    <meta name="author" content="Talleres Longo" />
+    <meta
+      name="keywords"
+      content="Talleres J. Longo, mecánica de precisión, rectificados cilíndricos, rectificados planos, trabajos de torno, trabajos de fresa, trabajos de cepillo, moldes y matrices, calderería ligera, mecanizados, calderería, taller mecánico, experiencia mecanizados"
+    />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Talleres J. Longo - Mecánica de Precisión y Calderería Ligera"
+    />
+    <meta
+      property="og:description"
+      content="Especialistas en rectificados cilíndricos y planos, trabajos de torno, fresa y cepillo, moldes y matrices. Con amplia experiencia en mecanizados y calderería ligera."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.talleresjlongo.es/" />
+    <meta
+      property="og:image"
+      content="https://www.talleresjlongo.es/_image?href=%2F_astro%2FLogoTJL.Cck0cXJE.webp&w=70&h=70&f=webp"
+    />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Talleres J. Longo - Mecánica de Precisión y Calderería"
+    />
+    <meta
+      name="twitter:description"
+      content="Ofrecemos soluciones de alta calidad en mecanizados, moldes y matrices, calderería ligera, y trabajos de torno, fresa y cepillo. Tu socio confiable en mecánica de precisión."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.talleresjlongo.es/_image?href=%2F_astro%2FLogoTJL.Cck0cXJE.webp&w=70&h=70&f=webp"
+    />
+    <meta name="twitter:creator" content="@TalleresJLongo" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/utils/LogoTJL.webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <title>Talleres J.Longo</title>
   </head>
   <body>
     <slot />
   </body>
 </html>
 <style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
   html {
     font-family: "Roboto", sans-serif;
     background: #13151a;
-  }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
   }
 </style>
