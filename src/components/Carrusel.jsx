@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 const Carrusel = () => {
 
   // Estado para rastrear el botón seleccionado
@@ -18,7 +19,7 @@ const Carrusel = () => {
         Testimonios
 
       </h2>
-        <article className="w-full h-full max-sm:h-[500px] md:h-[420px] p-3 flex flex-col lg:flex-row items-center lg:justify-start lg:gap-6  rounded-xl bg-tallerAzulMarino shadow-black mt-3">
+        <article className="w-full h-full max-sm:h-[500px] md:h-[349px] md:max-w-[1200px] p-3 flex flex-col lg:flex-row items-center lg:justify-start lg:gap-6  rounded-xl bg-tallerAzulMarino shadow-black mt-3">
           <img
             src="/src/utils/imagenTestimonio.webp"
             alt="imagenTestimonio1"
@@ -53,6 +54,7 @@ const Carrusel = () => {
           ))}
         </div>
       </section>
+     
     </>
   );
 };
