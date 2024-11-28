@@ -6,26 +6,33 @@ import Lijando from "../assets/Images/Lijando.webp";
 
 <section
   class="grid md:flex gap-6 p-6 bg-tallerGrisOscuro text-white justify-center"
+  aria-labelledby="section-title"
 >
+  <!-- Contenido principal del texto -->
   <div
     class="grid gap-4 p-9 bg-tallerAzulMarino rounded-3xl max-w-[420px] place-self-center"
   >
-    <h2 class="text-3xl font-bold">Perfección a medida Talleres J. Longo</h2>
+    <h2 id="section-title" class="text-3xl font-bold">
+      Perfección a medida en Talleres J. Longo
+    </h2>
     <div class="grid gap-4 leading-relaxed">
       <p>Más de 25 años de experiencia en carpintería metálica de precisión.</p>
       <p>
-        Nos hemos especializado en mecanizado de precisión, fabricando piezas
-        únicas y series cortas con la máxima calidad.
+        Nos especializamos en mecanizado de precisión, fabricando piezas únicas
+        y series cortas con la máxima calidad.
       </p>
     </div>
+    <!-- Botón de contacto -->
     <BotonContacto />
   </div>
+
+  <!-- Imagen descriptiva -->
   <div class="w-fit max-w-[860px]">
     <Image
       class="w-auto h-[500px] rounded-tr-[140px] shadow-lg object-cover"
       height={500}
       src={Lijando}
-      alt="Lijando"
+      alt="Trabajador lijando una pieza metálica en Talleres J. Longo"
     />
   </div>
 </section>

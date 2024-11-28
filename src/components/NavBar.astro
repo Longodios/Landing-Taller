@@ -4,19 +4,23 @@ import LogoTJL from "../assets/logos/LogoTJL.webp";
 ---
 
 <nav
-  class="px-6 py-5 grid sm:flex gap-3 sm:justify-between items-center text-white bg-gray-800"
+  class="bg-gray-800 text-white px-6 py-5 grid gap-3 sm:flex sm:justify-between sm:items-center"
+  aria-label="Primary Navigation"
 >
   <div class="flex items-center gap-3">
     <Image
       src={LogoTJL}
-      alt="Talleres J. Longo Logo"
-      width="70"
-      height="70"
-      class="flex-shrink-0"
+      alt="Logotipo de Talleres J. Longo, S.L."
+      class="w-20 h-20 flex-shrink-0"
+      format="webp"
+      loading="eager"
     />
     <h1 class="text-lg font-medium">
+      <span class="sr-only">Nombre de la empresa:</span>
       TALLERES <strong class="font-semibold">J.LONGO, S.L.</strong>
     </h1>
   </div>
-  <p class="text-sm">Contacto: 986 50 55 11 // 639 75 53 33</p>
+  <address class="text-sm not-italic">
+    <p class="text-sm">Contacto: 986 50 55 11 // 639 75 53 33</p>
+  </address>
 </nav>

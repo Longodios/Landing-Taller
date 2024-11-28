@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 const Carrusel = () => {
 
   // Estado para rastrear el botón seleccionado
@@ -13,19 +14,21 @@ const Carrusel = () => {
 
   return (
     <>
-      <h2 className="text-white text-center font-semibold text-4xl mt-5 mb-10">
+      
+      <section className="relative flex-col lg:justify-center  items-center  w-full  px-4 flex ">
+      <h2 className="text-white text-center font-semibold text-4xl mt-3">
         Testimonios
+
       </h2>
-      <section className="relative flex-col items-center mt-10 bg-black w-full justify-end px-4 inline-flex">
-        <div className="w-[120px] border-3 border-white rounded-full h-[120px] absolute top-[-60px] z-10 shadow-lg">
+        <article className="w-full h-full max-sm:h-[500px] md:h-[349px] md:max-w-[1200px] p-3 flex flex-col lg:flex-row items-center lg:justify-start lg:gap-6  rounded-xl bg-tallerAzulMarino shadow-black mt-3">
           <img
             src="/src/utils/imagenTestimonio.webp"
             alt="imagenTestimonio1"
-            className="w-full h-full object-cover rounded-full shadow"
+            className="z-10 h-full max-h-[120px] rounded-full"
           />
-        </div>
-        <article className="w-full p-3 flex flex-col items-center justify-center max-w-[600px] h-[530px] border-1 border-white rounded-xl bg-tallerAzulMarino relative shadow-black">
-          <p className="text-white text-center text-lg leading-7">
+
+         <div className="lg:flex lg:flex-col">
+          <p className=" text-white text-lg max-sm:max-w-[267px]">
             Llevamos trabajando con Talleres J. Longo desde hace más de una
             década. Su precisión en el mecanizado y la calidad de sus
             estructuras metálicas han sido fundamentales para nuestros proyectos
@@ -33,10 +36,11 @@ const Carrusel = () => {
             excepcional, siempre cumplen con los plazos y sus precios son muy
             competitivos.
           </p>
-          <div className="flex w-full">
-            <div className="w-10 h-px bg-white mt-3" />
-            <p className="text-white text-start text-lg ml-4"> Emilio </p>
-          </div>
+          <div className="inline-flex">
+          <span className="mt-3 w-12 h-[3px] bg-white "> </span>
+          <p className="text-white ml-5 text-lg"> Emilio </p>
+           </div>
+        </div>
         </article>
         <div className="inline-flex w-full justify-center items-center mt-10 gap-3">
           {/* Genera botones dinámicamente */}
@@ -51,6 +55,7 @@ const Carrusel = () => {
           ))}
         </div>
       </section>
+     
     </>
   );
 };
