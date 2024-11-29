@@ -6,24 +6,26 @@ import BotonContacto from "./BotonContacto.astro";
 ---
 
 <section
-  class="grid lg:flex place-items-center text-white bg-tallerGrisOscuro place-content-center pb-16 gap-8"
+  class="grid lg:flex place-items-center text-white bg-tallerGrisOscuro place-content-center lg:pe-6 pb-12 gap-8"
   aria-labelledby="services-heading"
 >
-  <div class="flex max-w-[1920px] items-center lg:gap-4">
+  <div
+    class="flex h-[281px] md:h-[425px] xl:h-[525px] items-center lg:gap-4 lg:mt-4"
+  >
     <Image
-      class="w-1/2 h-[281px] object-cover"
+      class="w-1/2 h-full object-cover"
       src={planosTaladro}
       alt="Planos técnicos en un taladro de precisión"
       loading="lazy"
     />
     <Image
-      class="w-1/2 h-[281px] object-cover"
+      class="w-1/2 h-full object-cover"
       src={soldador}
       alt="Un soldador trabajando con equipo de protección"
       loading="lazy"
     />
   </div>
-  <article class="flex flex-col gap-6 max-w-[650px] mx-6">
+  <article class="flex flex-col gap-6 max-w-[650px] w-full max-md:px-6">
     <h2 id="services-heading" class="text-3xl font-semibold">
       Nuestros servicios incluyen:
     </h2>
