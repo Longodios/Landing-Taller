@@ -12,19 +12,19 @@ const Carrusel = () => {
   const data = [
     {
       id: 1, 
-      imagen: ImagenTestimonio.src,
+      imagen: ImagenTestimonio,
       nombre: "Emilio",
       opinion: " Llevamos trabajando con Talleres J. Longo desde hace más de una década. Su precisión en el mecanizado y la calidad de sus estructuras metálicas han sido fundamentales para nuestros proyectos de construcción. La profesionalidad de Xavier y su equipo es excepcional, siempre cumplen con los plazos y sus precios son muycompetitivos."
     },
     {
       id: 2,
-      imagen: Xavi.src,
+      imagen: Xavi,
       nombre: "Xavier",
       opinion: "Muy buen trato recibido, precios muy competitivos y muy profesionales en el desarrollo del trabajo a realizar"
     },
     {
       id: 3,
-      imagen: Ana.src,
+      imagen: Ana,
       nombre: "Ana",
       opinion: "Muy buen trato recibido, precios muy competitivos y muy profesionales en el desarrollo del trabajo a realizar"
     }
@@ -65,7 +65,7 @@ const Carrusel = () => {
         
 
          <img
-            src={data[changePage].imagen}
+            src={data[changePage].imagen.src}
             alt="Imagen"
             className="z-10 h-full max-h-[120px] rounded-full"
           />
