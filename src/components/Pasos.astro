@@ -7,7 +7,7 @@ import Obra from "../assets/Images/obra.webp";
   class="grid place-items-center gap-6 p-6 text-white bg-black"
   aria-labelledby="section-title"
 >
-  <div class="grid gap-4 rounded-2xl">
+  <div class="grid gap-8 rounded-2xl">
     <h2 id="section-title" class="text-3xl font-bold">
       Pasos para materializar tus ideas
     </h2>
@@ -15,7 +15,7 @@ import Obra from "../assets/Images/obra.webp";
       <h3 id="steps-title" class="sr-only">
         Lista de pasos para la creación de proyectos
       </h3>
-      <ul class="grid gap-6 md:grid-cols-2">
+      <ul class="grid gap-6 md:grid-cols-2 place-content-center">
         {
           [
             {
@@ -39,7 +39,7 @@ import Obra from "../assets/Images/obra.webp";
               text: "Hacemos la entrega de tu proyecto a tiempo y nos aseguramos de que cumpla con tus expectativas, garantizando tu completa satisfacción.",
             },
           ].map(({ num, title, text }) => (
-            <li>
+            <li class="max-w-[326px]">
               <article>
                 <header>
                   <span class="text-8xl font-bold block" itemprop="position">

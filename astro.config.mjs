@@ -8,6 +8,6 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react(), sitemap()],
-  output: "server",
-  adapter: vercel({}),
+  output: "static",
+  adapter: vercel(),
 });
