@@ -1,24 +1,26 @@
 import { useState , useEffect } from "react";
 
 
+
+
 const Carrusel = () => {
 
   const data = [
     {
       id: 1, 
-      imagen: "/src/assets/Images/imagenTestimonio.webp",
+      imagen: "",
       nombre: "Emilio",
       opinion: " Llevamos trabajando con Talleres J. Longo desde hace más de una década. Su precisión en el mecanizado y la calidad de sus estructuras metálicas han sido fundamentales para nuestros proyectos de construcción. La profesionalidad de Xavier y su equipo es excepcional, siempre cumplen con los plazos y sus precios son muycompetitivos."
     },
     {
       id: 2,
-      imagen: "/src/assets/Images/Xavi.webp",
+      imagen: "",
       nombre: "Xavier",
       opinion: "Muy buen trato recibido, precios muy competitivos y muy profesionales en el desarrollo del trabajo a realizar"
     },
     {
       id: 3,
-      imagen: "/src/assets/Images/Ana.webp",
+      imagen: "",
       nombre: "Ana",
       opinion: "Muy buen trato recibido, precios muy competitivos y muy profesionales en el desarrollo del trabajo a realizar"
     }
